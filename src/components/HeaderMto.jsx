@@ -2,17 +2,16 @@ import { Link } from "react-router-dom";
 
 const HeaderMto = function () {
   return (
-    <header className="px-3">
+    <header>
       <nav
         style={{
           backgroundColor: "#233a8e",
         }}
-        className="navbar px-4"
-        data-bs-theme="dark"
+        className="navbar px-4 py-2"
       >
         <div className="container-fluid ">
           <a className="navbar-brand" href="#">
-            <img src="src/assets/LogoMeteo.png" style={{ width: "165px" }} />
+            <img src="/LogoMeteo.png" style={{ width: "165px" }} />
           </a>
         </div>
       </nav>
@@ -20,10 +19,10 @@ const HeaderMto = function () {
         style={{
           background: "linear-gradient(to bottom, #1155a389, #233a8e)",
         }}
-        className="navbar navbar-expand-lg bg-primary px-5"
+        className="navbar navbar-expand-lg bg-primary px-5 py-2"
         data-bs-theme="dark"
       >
-        <div className="container-fluid fs-3">
+        <div className="container-fluid fs-4">
           <div className="collapse navbar-collapse show">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item mx-4">
