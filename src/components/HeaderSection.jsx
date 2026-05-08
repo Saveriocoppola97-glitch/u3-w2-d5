@@ -1,9 +1,12 @@
 import { Button, Col, Container, Row, InputGroup, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeaaderSection = function () {
   const [weather, setWeather] = useState([]);
+  const [city, setCity] = useState("");
+
+  const navigate = useNavigate();
 
   const allCity = ["Roma", "Milano", "Halli"];
 
@@ -29,6 +32,15 @@ const HeaaderSection = function () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (city.trim() === "") return;
+
+    navigate("/city/" + city);
+    setCity("");
+  };
+
   return (
     <section
       className="rounded-bottom"
@@ -41,16 +53,23 @@ const HeaaderSection = function () {
       <Container fluid className="p-5 mb-3">
         <Row className="justify-content-center py-3">
           <Col xs={12} md={8} lg={6}>
-            <InputGroup className="shadow-sm p-2 bg-white rounded-1">
-              <InputGroup.Text className="bg-white border-0">
-                <i className="bi bi-search"></i>
-              </InputGroup.Text>
-              <Form.Control
-                type="text"
-                placeholder="Cerca località"
-                className="border-0"
-              />
-            </InputGroup>
+            <Form onSubmit={handleSearch}>
+              <InputGroup className="shadow-sm p-2 bg-white rounded-1">
+                <InputGroup.Text className="bg-white border-0">
+                  <i className="bi bi-search"></i>
+                </InputGroup.Text>
+
+                <Form.Control
+                  type="text"
+                  placeholder="Cerca località"
+                  className="border-0"
+                  value={city}
+                  onChange={function (e) {
+                    setCity(e.target.value);
+                  }}
+                />
+              </InputGroup>
+            </Form>
           </Col>
         </Row>
         <Row className="mt-3 justify-content-center">

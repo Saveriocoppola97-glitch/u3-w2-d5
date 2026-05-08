@@ -1,8 +1,32 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 
 const MainSection = function () {
   const params = useParams();
+
+  const [prediction, setPrediction] = useState([]);
+
+  useEffect(
+    function () {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/forecast?q=" +
+          params.name +
+          "&appid=ce6e3dffb4ae5a9923595e129ec923be&units=metric",
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          console.log(data);
+          setPrediction(data.list);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+    [params.name],
+  );
 
   return (
     <Row>
@@ -23,8 +47,39 @@ const MainSection = function () {
               </Col>
             </Row>
           </div>
-
           <img src="/Soleggiato.jpg" alt="" className="w-100" />
+          <div className="p-3">
+            {prediction.map(function (item, index) {
+              return (
+                <Row
+                  key={index}
+                  className="py-3 align-items-center justify-content-between"
+                >
+                  <Col className="d-flex align-items-center gap-2">
+                    <i
+                      className={
+                        item.weather[0].main === "Clear"
+                          ? "bi bi-sun"
+                          : item.weather[0].main === "Rain"
+                            ? "bi bi-cloud-rain"
+                            : item.weather[0].main === "Snow"
+                              ? "bi bi-snow"
+                              : "bi bi-cloud"
+                      }
+                    />
+                    <span>
+                      {new Date(item.dt_txt).toLocaleDateString("it-IT", {
+                        weekday: "long",
+                        day: "numeric",
+                      })}{" "}
+                      {item.dt_txt.split(" ")[1]}
+                    </span>
+                  </Col>
+                  <Col xs="auto">{item.main.temp}°C</Col>
+                </Row>
+              );
+            })}
+          </div>
         </div>
       </Col>
     </Row>
