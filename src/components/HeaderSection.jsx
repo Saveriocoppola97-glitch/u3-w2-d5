@@ -18,6 +18,9 @@ const HeaaderSection = function () {
           "&appid=ce6e3dffb4ae5a9923595e129ec923be&units=metric",
       )
         .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Errore HTTP: " + response.status);
+          }
           return response.json();
         })
         .then(function (data) {
@@ -36,7 +39,6 @@ const HeaaderSection = function () {
     e.preventDefault();
 
     if (city.trim() === "") return;
-
     navigate("/city/" + city);
     setCity("");
   };

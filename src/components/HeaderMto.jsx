@@ -31,21 +31,18 @@ const HeaderMto = function () {
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
               </li>
-
               <li className="nav-item mx-4">
                 <Link className="nav-link fw-bold" to="/region">
                   Regioni
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
               </li>
-
               <li className="nav-item mx-4">
                 <Link className="nav-link fw-bold" to="/News">
                   Notizie
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
               </li>
-
               <li className="nav-item mx-4">
                 <Link className="nav-link fw-bold" to="/Info">
                   Info
