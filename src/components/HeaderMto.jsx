@@ -15,7 +15,7 @@ const HeaderMto = function () {
           </a>
         </div>
       </nav>
-      <nav
+      <div
         style={{
           background: "linear-gradient(to bottom, #1155a389, #233a8e)",
         }}
@@ -55,7 +55,7 @@ const HeaderMto = function () {
             </ul>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

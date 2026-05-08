@@ -24,6 +24,7 @@ function App() {
           </Routes>
         </Container>
       </main>
+      <footer></footer>
     </BrowserRouter>
   );
 }

@@ -17,7 +17,6 @@ const Region = () => {
             <li>Emilia-Romagna</li>
           </ul>
         </Col>
-
         <Col xs={12} md={6} className="mb-4">
           <h2>Centro</h2>
           <ul className="list-unstyled">
@@ -27,7 +26,6 @@ const Region = () => {
             <li>Lazio</li>
           </ul>
         </Col>
-
         <Col xs={12} md={6} className="mb-4">
           <h2>Sud</h2>
           <ul className="list-unstyled">
