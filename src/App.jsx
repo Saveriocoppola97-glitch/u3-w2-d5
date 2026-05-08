@@ -1,26 +1,29 @@
-import { BrowserRouter } from "react-router-dom";
-import HeaderMto from "./components/HeaderMto";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
+
+import HeaderMto from "./components/HeaderMto";
 import HeaaderSection from "./components/HeaderSection";
+import MainSection from "./components/MainSection";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <header>
         <Container>
-          <BrowserRouter>
-            <HeaderMto />
-          </BrowserRouter>
+          <HeaderMto />
         </Container>
       </header>
       <main>
         <Container>
           <HeaaderSection />
+          <Routes>
+            <Route path="/city/:name" element={<MainSection />} />
+          </Routes>
         </Container>
       </main>
-    </>
+    </BrowserRouter>
   );
 }
 

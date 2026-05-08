@@ -7,7 +7,7 @@ const HeaderMto = function () {
         style={{
           backgroundColor: "#233a8e",
         }}
-        className="navbar px-4 py-2"
+        className="navbar px-4 py-3"
       >
         <div className="container-fluid ">
           <a className="navbar-brand" href="#">
@@ -33,21 +33,21 @@ const HeaderMto = function () {
               </li>
 
               <li className="nav-item mx-4">
-                <Link className="nav-link fw-bold" to="/tv-shows">
+                <Link className="nav-link fw-bold" to="/Region">
                   Regioni
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
               </li>
 
               <li className="nav-item mx-4">
-                <Link className="nav-link fw-bold" to="/movies">
+                <Link className="nav-link fw-bold" to="/News">
                   Notizie
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
               </li>
 
               <li className="nav-item mx-4">
-                <Link className="nav-link fw-bold" to="/recently-added">
+                <Link className="nav-link fw-bold" to="/Info">
                   Info
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
