@@ -1,42 +1,52 @@
-import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
 
 const Region = () => {
-  const regions = {
-    nord: [
-      "Valle d'Aosta",
-      "Piemonte",
-      "Liguria",
-      "Lombardia",
-      "Trentino-Alto Adige",
-      "Veneto",
-      "Friuli-Venezia Giulia",
-      "Emilia-Romagna",
-    ],
-    centro: ["Toscana", "Umbria", "Marche", "Lazio"],
-    sud: ["Abruzzo", "Molise", "Campania", "Puglia", "Basilicata", "Calabria"],
-    isole: ["Sicilia", "Sardegna"],
-  };
-
   return (
-    <div className="text-center">
-      {Object.keys(regions).map(function (area, index) {
-        return (
-          <div key={index}>
-            <h3 className="text-uppercase mt-4">{area}</h3>
-            {regions[area].map(function (region, i) {
-              return (
-                <Link
-                  key={i}
-                  className="nav-link fw-bold fs-5"
-                  to={"/region/" + region}
-                >
-                  <div>{region}</div>
-                </Link>
-              );
-            })}
-          </div>
-        );
-      })}
+    <div className="container py-4">
+      <Row className="text-center">
+        <Col xs={12} md={6} className="mb-4">
+          <h2>Nord</h2>
+          <ul className="list-unstyled">
+            <li>Valle d'Aosta</li>
+            <li>Piemonte</li>
+            <li>Liguria</li>
+            <li>Lombardia</li>
+            <li>Trentino-Alto Adige</li>
+            <li>Veneto</li>
+            <li>Friuli-Venezia Giulia</li>
+            <li>Emilia-Romagna</li>
+          </ul>
+        </Col>
+
+        <Col xs={12} md={6} className="mb-4">
+          <h2>Centro</h2>
+          <ul className="list-unstyled">
+            <li>Toscana</li>
+            <li>Umbria</li>
+            <li>Marche</li>
+            <li>Lazio</li>
+          </ul>
+        </Col>
+
+        <Col xs={12} md={6} className="mb-4">
+          <h2>Sud</h2>
+          <ul className="list-unstyled">
+            <li>Abruzzo</li>
+            <li>Molise</li>
+            <li>Campania</li>
+            <li>Puglia</li>
+            <li>Basilicata</li>
+            <li>Calabria</li>
+          </ul>
+        </Col>
+        <Col xs={12} md={6} className="mb-4">
+          <h2>Isole</h2>
+          <ul className="list-unstyled">
+            <li>Sicilia</li>
+            <li>Sardegna</li>
+          </ul>
+        </Col>
+      </Row>
     </div>
   );
 };

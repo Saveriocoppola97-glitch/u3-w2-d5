@@ -53,7 +53,7 @@ const MainSection = function () {
               return (
                 <Row
                   key={index}
-                  className="py-3 align-items-center justify-content-between"
+                  className="py-3 align-items-center justify-content-between fs-4"
                 >
                   <Col className="d-flex align-items-center gap-2">
                     <i
@@ -67,13 +67,13 @@ const MainSection = function () {
                               : "bi bi-cloud"
                       }
                     />
-                    <span>
+                    <p className="m-0">
                       {new Date(item.dt_txt).toLocaleDateString("it-IT", {
                         weekday: "long",
                         day: "numeric",
                       })}{" "}
                       {item.dt_txt.split(" ")[1]}
-                    </span>
+                    </p>
                   </Col>
                   <Col xs="auto">{item.main.temp}°C</Col>
                 </Row>

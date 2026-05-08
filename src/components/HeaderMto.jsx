@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { NavDropdown } from "react-bootstrap";
 
 const HeaderMto = function () {
   return (
@@ -34,7 +33,7 @@ const HeaderMto = function () {
               </li>
 
               <li className="nav-item mx-4">
-                <Link className="nav-link fw-bold" to="/Region">
+                <Link className="nav-link fw-bold" to="/region">
                   Regioni
                   <i className="bi bi-chevron-down mx-2"></i>
                 </Link>
